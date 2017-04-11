@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JExpandableTableView_Example' do
+  pod 'JExpandableTableView', :path => '../'
+
+  target 'JExpandableTableView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

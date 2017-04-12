@@ -1,6 +1,5 @@
 # JExpandableTableView
 
-[![CI Status](http://img.shields.io/travis/tekride/JExpandableTableView.svg?style=flat)](https://travis-ci.org/tekride/JExpandableTableView)
 [![Version](https://img.shields.io/cocoapods/v/JExpandableTableView.svg?style=flat)](http://cocoapods.org/pods/JExpandableTableView)
 [![License](https://img.shields.io/cocoapods/l/JExpandableTableView.svg?style=flat)](http://cocoapods.org/pods/JExpandableTableView)
 [![Platform](https://img.shields.io/cocoapods/p/JExpandableTableView.svg?style=flat)](http://cocoapods.org/pods/JExpandableTableView)
@@ -22,7 +21,7 @@ pod "JExpandableTableView"
 
 ## Author
 
-tekride, jadhav.pramod.a@gmail.com
+Pramod Jadhav
 
 ## License
 

@@ -22,8 +22,8 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/jadhavp/JExpandableTableView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'tekride' => 'jadhav.pramod.a@gmail.com' }
-  s.source           = { :git => 'https://github.com/tekride/JExpandableTableView.git', :tag => s.version.to_s }
+  s.author           = { 'jadhavp' => 'jadhav.pramod.a@gmail.com' }
+  s.source           = { :git => 'https://github.com/jadhavp/JExpandableTableView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

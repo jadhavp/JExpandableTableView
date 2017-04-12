@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  JExpandableTableView
 //
-//  Created by tekride on 04/11/2017.
-//  Copyright (c) 2017 tekride. All rights reserved.
+//  Created by Pramod Jadhav on 04/11/2017.
+//  Copyright (c) 2017 Pramod Jadhav. All rights reserved.
 //
 
 import UIKit

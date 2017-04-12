@@ -4,7 +4,7 @@ JExpandableTableView provides out of box support for expandale table cells
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## App Preview
+## App Preview ( Checkout [live example app](https://appetize.io/embed/pa5850fv541uff63va4dxtcjrw?device=iphone7&scale=75&orientation=portrait&osVersion=10.3): courtesy Appetize ) 
 ![](https://github.com/jadhavp/JExpandableTableView/blob/master/Example/preview.gif)
 ![](https://github.com/jadhavp/JExpandableTableView/blob/master/Example/Screen_Shot_3.png)
 

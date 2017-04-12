@@ -1,0 +1,19 @@
+PODS:
+  - JExpandableTableView (0.1.0)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - JExpandableTableView (from `../`)
+  - SVProgressHUD (~> 2.0)
+
+EXTERNAL SOURCES:
+  JExpandableTableView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JExpandableTableView: 96eb1180f8a637ad9858bca6e4b6446f2c3555ee
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: 9cac257abdcb7fa799e2f537fa64ce0b4d7d4766
+
+COCOAPODS: 1.1.1

@@ -14,6 +14,12 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		93C1FAEB29424393A82945B7 /* Pods_JExpandableTableView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37C60F803FE0E127A8B0491 /* Pods_JExpandableTableView_Example.framework */; };
+		E6023B551E9D24EA00360CE6 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6023B521E9D24EA00360CE6 /* TextCell.xib */; };
+		E6023B561E9D24EA00360CE6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6023B531E9D24EA00360CE6 /* HeaderView.swift */; };
+		E6023B571E9D24EA00360CE6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6023B541E9D24EA00360CE6 /* HeaderView.xib */; };
+		E6023B591E9D468200360CE6 /* SectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6023B581E9D468200360CE6 /* SectionInfo.swift */; };
+		E6023B5B1E9D469500360CE6 /* CellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6023B5A1E9D469500360CE6 /* CellInfo.swift */; };
+		E6023B5D1E9DCEAC00360CE6 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6023B5C1E9DCEAC00360CE6 /* ImageCell.xib */; };
 		EEB7803C621CC7CDFCD4E247 /* Pods_JExpandableTableView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08411B913B898C43AD0787DD /* Pods_JExpandableTableView_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,12 +47,18 @@
 		607FACE51AFB9204008FA782 /* JExpandableTableView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JExpandableTableView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		74D0324BD438C68E093EFC7A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		8DFF590A5162C553587B26A1 /* JExpandableTableView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = JExpandableTableView.podspec; path = ../JExpandableTableView.podspec; sourceTree = "<group>"; };
+		74D0324BD438C68E093EFC7A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8DFF590A5162C553587B26A1 /* JExpandableTableView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JExpandableTableView.podspec; path = ../JExpandableTableView.podspec; sourceTree = "<group>"; };
 		9495BF149D2C51EDC3F89B78 /* Pods-JExpandableTableView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JExpandableTableView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JExpandableTableView_Tests/Pods-JExpandableTableView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A37C60F803FE0E127A8B0491 /* Pods_JExpandableTableView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JExpandableTableView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3B708EB8AC66E7250003167 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C3B708EB8AC66E7250003167 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C6B9E4AAC71ECD80669F0B6F /* Pods-JExpandableTableView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JExpandableTableView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JExpandableTableView_Example/Pods-JExpandableTableView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E6023B521E9D24EA00360CE6 /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
+		E6023B531E9D24EA00360CE6 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E6023B541E9D24EA00360CE6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		E6023B581E9D468200360CE6 /* SectionInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionInfo.swift; sourceTree = "<group>"; };
+		E6023B5A1E9D469500360CE6 /* CellInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellInfo.swift; sourceTree = "<group>"; };
+		E6023B5C1E9DCEAC00360CE6 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +105,11 @@
 		607FACD21AFB9204008FA782 /* Example for JExpandableTableView */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
+				E64F49A31E9E0529003A0129 /* Custom Views */,
+				E64F49A61E9E0551003A0129 /* Models */,
+				E64F49A51E9E0542003A0129 /* Viewcontroller */,
+				E64F49A41E9E053A003A0129 /* Appdelegate */,
+				E64F49A71E9E0559003A0129 /* Resources */,
 			);
 			name = "Example for JExpandableTableView";
 			path = JExpandableTableView;
@@ -137,6 +148,53 @@
 				74D0324BD438C68E093EFC7A /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		E64F49A31E9E0529003A0129 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6023B5C1E9DCEAC00360CE6 /* ImageCell.xib */,
+				E6023B521E9D24EA00360CE6 /* TextCell.xib */,
+				E6023B531E9D24EA00360CE6 /* HeaderView.swift */,
+				E6023B541E9D24EA00360CE6 /* HeaderView.xib */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		E64F49A41E9E053A003A0129 /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+			);
+			name = Appdelegate;
+			sourceTree = "<group>";
+		};
+		E64F49A51E9E0542003A0129 /* Viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD71AFB9204008FA782 /* ViewController.swift */,
+			);
+			name = Viewcontroller;
+			sourceTree = "<group>";
+		};
+		E64F49A61E9E0551003A0129 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6023B581E9D468200360CE6 /* SectionInfo.swift */,
+				E6023B5A1E9D469500360CE6 /* CellInfo.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E64F49A71E9E0559003A0129 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		ED46E2E2BAFCE9B8F44AC3E0 /* Frameworks */ = {
@@ -248,7 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6023B571E9D24EA00360CE6 /* HeaderView.xib in Resources */,
+				E6023B551E9D24EA00360CE6 /* TextCell.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				E6023B5D1E9DCEAC00360CE6 /* ImageCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -362,6 +423,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				E6023B591E9D468200360CE6 /* SectionInfo.swift in Sources */,
+				E6023B561E9D24EA00360CE6 /* HeaderView.swift in Sources */,
+				E6023B5B1E9D469500360CE6 /* CellInfo.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

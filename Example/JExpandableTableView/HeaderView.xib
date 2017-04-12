@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeaderView" customModule="JExpandableTableView_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wr-Xa-Nv6">
+                    <rect key="frame" x="8" y="8" width="359" height="79"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <color key="textColor" red="0.2274509804" green="0.23529411759999999" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BTM-JT-W63">
+                    <rect key="frame" x="347" y="38.5" width="20" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="h1A-x4-Sqa"/>
+                        <constraint firstAttribute="height" constant="18" id="zQF-lc-dHq"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.27450980390000002" green="0.66666666669999997" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="9Wr-Xa-Nv6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="DGL-el-zTE"/>
+                <constraint firstAttribute="bottom" secondItem="9Wr-Xa-Nv6" secondAttribute="bottom" constant="8" id="DqH-G8-0HE"/>
+                <constraint firstItem="9Wr-Xa-Nv6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="K6F-r2-1dB"/>
+                <constraint firstAttribute="trailing" secondItem="BTM-JT-W63" secondAttribute="trailing" constant="8" id="YIC-NN-IT0"/>
+                <constraint firstAttribute="trailing" secondItem="9Wr-Xa-Nv6" secondAttribute="trailing" constant="8" id="r2i-1k-Ofs"/>
+                <constraint firstItem="BTM-JT-W63" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xb3-WV-S5p"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowImgView" destination="BTM-JT-W63" id="PIp-mv-vih"/>
+            </connections>
+            <point key="canvasLocation" x="73" y="-243"/>
+        </view>
+    </objects>
+</document>

@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'Out of box support for expandale table cells'
+  s.description      = 'JExpandableTableView provides out of box support for expandale table cells'
 
   s.homepage         = 'https://github.com/jadhavp/JExpandableTableView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'

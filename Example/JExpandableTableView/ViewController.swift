@@ -20,12 +20,11 @@ class ViewController: UIViewController,JExpandableTableViewDataSource, JExpandab
         
         self.title = "Book details"
         
-//        jtableView = JExpandableTableView(frame: self.view.bounds)
-//        self.view.addSubview(jtableView)
+        jtableView = JExpandableTableView(frame: <#T##CGRect#>)
+
         jtableView.delegate = self
         jtableView.dataSource = self
         jtableView.keepPreviousCellExpanded = true
-//        jtableView.disableCellSeparator = true
         
         var cellInfo = CellInfo("Game of thrones",cellId: "TextCell")
         let sec1 = SectionInfo("Name")
@@ -51,20 +50,18 @@ class ViewController: UIViewController,JExpandableTableViewDataSource, JExpandab
         jtableView.register(celNib, forCellReuseIdentifier: "ImageCell")
         celNib = UINib.init(nibName: "TextCell", bundle: nil)
         jtableView.register(celNib, forCellReuseIdentifier: "TextCell")
-        // Do any additional setup after loading the view.
+
         let headerNib = UINib.init(nibName: "HeaderView", bundle: nil)
         jtableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderView")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: JExpandableTableView, numberOfRowsInSection section: Int, callback:  @escaping (Int) -> Void) {
 
         let sectionInfo = self.dataArray[section]
-
         if sectionInfo.cells.count != 0 {
             callback(sectionInfo.cells.count)
         }else{
@@ -86,7 +83,6 @@ class ViewController: UIViewController,JExpandableTableViewDataSource, JExpandab
                     sectionInfo.cells.append(CellInfo("5.  A Game of Thrones, very very long chapter beyond the wall",cellId: "TextCell"))
                     
                     callback(sectionInfo.cells.count)
-                    
                 }
             }
         }
@@ -121,6 +117,7 @@ class ViewController: UIViewController,JExpandableTableViewDataSource, JExpandab
         return header
     }
     
+    // Needed only if you want to show cells expanded on first load, JExpandableTableView will show cells expanded if this method returns number of cells greater than zero and current section have cells more than zero
     func tableView(_ tableView: JExpandableTableView, initialNumberOfRowsInSection section: Int) -> Int{
         
         if section == 0  {

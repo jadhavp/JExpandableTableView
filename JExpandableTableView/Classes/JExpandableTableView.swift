@@ -12,7 +12,6 @@ class SectionInfo: NSObject {
     
     var isOpen: Bool!
     var noOfRows: Int = 0
-    var section: Int!
 }
 
 protocol JTableHeaderViewDelegate : NSObjectProtocol{
@@ -211,9 +210,7 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
         #else
             // this code will execute only in IB
         #endif
-        
-        
-        
+
         addSubview(tableview!)
         
         self.addConstraints([
@@ -223,12 +220,6 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
             NSLayoutConstraint(item: tableview, attribute: .trailing, relatedBy: .equal, toItem: self,  attribute: .trailing, multiplier: 1, constant: 0)
             ]
         )
-        
-//        if disableCellSeparator == true {
-//            tableview.separatorStyle = .none
-//        }else{
-//            tableview.separatorStyle = .singleLine
-//        }
     }
     
     //TableView delegate methods
@@ -265,7 +256,6 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
                     info.isOpen = false
                 }
                 info.noOfRows = initialNoOfCells
-                info.section = section
                 sectionInfoArray.append(info)
             }
         }

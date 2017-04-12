@@ -4,6 +4,10 @@ JExpandableTableView provides out of box support for expandale table cells
 ## Example
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## App Preview
+![](https://github.com/jadhavp/JExpandableTableView/blob/master/Example/preview.gif)
+![](https://github.com/jadhavp/JExpandableTableView/blob/master/Example/Screen_Shot_3.png)
+
 ## Requirements
 * Xcode 8.x
 * Swift 3.x

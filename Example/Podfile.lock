@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JExpandableTableView: 96eb1180f8a637ad9858bca6e4b6446f2c3555ee
+  JExpandableTableView: d372aaa027f9904c4067a371e08c4c4363931b13
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
 PODFILE CHECKSUM: 9cac257abdcb7fa799e2f537fa64ce0b4d7d4766

@@ -20,8 +20,6 @@ class ViewController: UIViewController,JExpandableTableViewDataSource, JExpandab
         
         self.title = "Book details"
         
-        jtableView = JExpandableTableView(frame: <#T##CGRect#>)
-
         jtableView.delegate = self
         jtableView.dataSource = self
         jtableView.keepPreviousCellExpanded = true

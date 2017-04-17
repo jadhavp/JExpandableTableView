@@ -105,6 +105,10 @@ Sample delegate methods given below, please refer Example app to get more inform
         return header
     }
 ```
+## Contributing
+
+If anyone interested in new additions to this repo please feel free to create pull request.
+
 ## Author
 
 Pramod Jadhav

@@ -157,14 +157,22 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
         self.tableview!.register(nib, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
-    func setEstimatedRowHeight(height : CGFloat) -> Void {
+    open func setEstimatedRowHeight(height : CGFloat) -> Void {
         tableview.estimatedRowHeight = height
     }
     
-    func setRowHeight(height : CGFloat) -> Void {
+    open func setRowHeight(height : CGFloat) -> Void {
         tableview.rowHeight = height
     }
     
+    open func realoadData() -> Void {
+        self.tableview.reloadData()
+    }
+    
+    open func reloadRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation){
+        self.tableview.reloadRows(at: indexPaths, with: animation)
+    }
+
     @IBInspectable public var disableCellSeparator:Bool  = false{
         
         didSet{

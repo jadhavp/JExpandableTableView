@@ -165,7 +165,7 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
         tableview.rowHeight = height
     }
     
-    open func realoadData() -> Void {
+    open func reloadData() -> Void {
         self.tableview.reloadData()
     }
     

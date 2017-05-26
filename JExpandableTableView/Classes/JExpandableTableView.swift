@@ -165,14 +165,22 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
         tableview.rowHeight = height
     }
     
-    open func realoadData() -> Void {
+    open func reloadData() -> Void {
+        
+        sectionInfoArray.removeAll()
+        self.lastOpenSectionIndex = NSNotFound
         self.tableview.reloadData()
     }
     
     open func reloadRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation){
         self.tableview.reloadRows(at: indexPaths, with: animation)
     }
-
+    
+    public func addRefreshControler(refreshControl : UIRefreshControl){
+        
+        tableview.addSubview(refreshControl)
+    }
+    
     @IBInspectable public var disableCellSeparator:Bool  = false{
         
         didSet{
@@ -193,7 +201,7 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
             tableview.separatorStyle = .singleLine
         }
     }
-
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
@@ -218,7 +226,7 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
         #else
             // this code will execute only in IB
         #endif
-
+        
         addSubview(tableview!)
         
         self.addConstraints([
@@ -228,6 +236,7 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
             NSLayoutConstraint(item: tableview, attribute: .trailing, relatedBy: .equal, toItem: self,  attribute: .trailing, multiplier: 1, constant: 0)
             ]
         )
+        
     }
     
     //TableView delegate methods
@@ -251,7 +260,6 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
         
         let sections = self.dataSource!.numberOfSections(in : self);
         if sectionInfoArray.count == 0  {
-            
             
             for section in 0 ..< sections {
                 

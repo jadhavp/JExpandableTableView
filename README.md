@@ -105,6 +105,22 @@ Sample delegate methods given below, please refer Example app to get more inform
         return header
     }
 ```
+
+### Manually open/close Headers
+Below code snippet copied from sample app, which demonstrate this feature
+```swift
+        jtableView.openHeader(section: 1);
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+            jtableView.closeHeader(section: 1);
+
+        })
+```
+
+### Support UIRefreshControl
+```swift
+    jtableView.addRefreshControler(refreshControl: <UIRefreshControl>)
+```
+
 ## Contributing
 
 If anyone interested in new additions to this repo please feel free to create pull request.

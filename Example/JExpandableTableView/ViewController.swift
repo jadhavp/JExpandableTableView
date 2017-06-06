@@ -125,5 +125,14 @@ class ViewController: UIViewController,JExpandableTableViewDataSource, JExpandab
             return 0
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.jtableView.openHeader(section: 1);
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+            self.jtableView.closeHeader(section: 1);
+
+        })
+    }
 
 }

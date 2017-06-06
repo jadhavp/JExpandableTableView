@@ -323,12 +323,14 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
     public func closeHeader(section : Int){
     
         let headerView:JExpandableTableViewHV  =  self.tableview.headerView(forSection: section) as! JExpandableTableViewHV;
+        headerView.sectionInfo.isOpen = false
         closeHeader(headerView: headerView, section: section)
     }
     
     public func openHeader(section : Int){
         
-        let headerView:JExpandableTableViewHV  =  self.tableview.headerView(forSection: section) as! JExpandableTableViewHV;
+        let headerView:JExpandableTableViewHV  =  self.tableview.headerView(forSection: section) as! JExpandableTableViewHV
+        headerView.sectionInfo.isOpen = true
         openHeader(headerView: headerView, section: section)
     }
 

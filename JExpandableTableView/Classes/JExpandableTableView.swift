@@ -138,44 +138,51 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
     var sectionInfoArray  = [SectionInfo]()
     
     // JExpandableTableView Public method
-    open func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell{
+    public func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell{
         
         return self.tableview.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
     }
     
-    open func dequeueReusableHeaderFooterView(withIdentifier identifier: String) -> UITableViewHeaderFooterView? {
+    public func dequeueReusableHeaderFooterView(withIdentifier identifier: String) -> UITableViewHeaderFooterView? {
         return self.tableview.dequeueReusableHeaderFooterView(withIdentifier: identifier)
     }
     
-    open func register(_ nib: UINib?, forCellReuseIdentifier identifier: String){
+    public func register(_ nib: UINib?, forCellReuseIdentifier identifier: String){
         
         self.tableview!.register(nib, forCellReuseIdentifier: identifier)
     }
     
-    open func register(_ nib: UINib?, forHeaderFooterViewReuseIdentifier identifier: String){
+    public func register(_ nib: UINib?, forHeaderFooterViewReuseIdentifier identifier: String){
         
         self.tableview!.register(nib, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
-    open func setEstimatedRowHeight(height : CGFloat) -> Void {
+    public func setEstimatedRowHeight(height : CGFloat) -> Void {
         tableview.estimatedRowHeight = height
     }
     
-    open func setRowHeight(height : CGFloat) -> Void {
+    public func setRowHeight(height : CGFloat) -> Void {
         tableview.rowHeight = height
     }
     
-    open func reloadData() -> Void {
+    public func reloadData() -> Void {
         
         sectionInfoArray.removeAll()
         self.lastOpenSectionIndex = NSNotFound
         self.tableview.reloadData()
     }
     
-    open func reloadRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation){
+    public func reloadRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation){
         self.tableview.reloadRows(at: indexPaths, with: animation)
     }
     
+    
+    /**
+     Adds refresh control at top of table view for pull to refresh intercations
+     
+     @param refreshControl - UIRefreshControl object
+     
+     */
     public func addRefreshControler(refreshControl : UIRefreshControl){
         
         tableview.addSubview(refreshControl)
@@ -313,72 +320,105 @@ public class JExpandableTableView: UIView , UITableViewDataSource, UITableViewDe
         self.delegate?.tableView(self, didSelectRowAt: indexPath)
     }
     
-    //JExpandableTableViewHV
-    func headerView(sectionOpened: JExpandableTableViewHV,section : Int){
+    public func closeHeader(section : Int){
+    
+        let headerView:JExpandableTableViewHV  =  self.tableview.headerView(forSection: section) as! JExpandableTableViewHV;
+        closeHeader(headerView: headerView, section: section)
+    }
+    
+    public func openHeader(section : Int){
         
-        self.tableview.beginUpdates()
-        let alastOpenSectionIndex = self.lastOpenSectionIndex
-        let currentSection = section
-        self.lastOpenSectionIndex = currentSection
+        let headerView:JExpandableTableViewHV  =  self.tableview.headerView(forSection: section) as! JExpandableTableViewHV;
+        openHeader(headerView: headerView, section: section)
+    }
+
+    
+    private func closeHeader(headerView:JExpandableTableViewHV,section : Int){
         
-        self.dataSource?.tableView(self, numberOfRowsInSection: section, callback: { (noOfRows : Int) in
+        if(headerView.sectionInfo.isOpen == false){
             
-            let info : SectionInfo = self.sectionInfoArray[section]
-            info.noOfRows = noOfRows
-            
+            let sectionClosed = headerView
+            let noOfRows  = self.tableview.numberOfRows(inSection: section)
             var array = [IndexPath]()
             for index in  0..<noOfRows{
                 
-                let indexPath = IndexPath(row: index, section: currentSection)
+                let indexPath = IndexPath(row: index, section: section)
                 array.append(indexPath)
                 
             }
-            
-            if alastOpenSectionIndex != NSNotFound && self.keepPreviousCellExpanded == false{
-                
-                let info : SectionInfo = self.sectionInfoArray[alastOpenSectionIndex]
-                info.isOpen = false
-                let rows = self.tableview.numberOfRows(inSection: alastOpenSectionIndex)
-                var rowsToDelete = [IndexPath]()
-                for index in  0..<rows{
-                    
-                    let indexPath = IndexPath(row: index, section: alastOpenSectionIndex)
-                    rowsToDelete.append(indexPath)
-                    
-                }
-                
-                if rowsToDelete.count != 0 {
-                    self.tableview.deleteRows(at: rowsToDelete, with: .automatic)
-                }
-            }
-            if array.count != 0{
-                self.tableview.insertRows(at: array, with: .automatic)
+            self.tableview.beginUpdates()
+            if array.count != 0 {
+                self.tableview.deleteRows(at: array, with: .automatic)
             }
             self.tableview.endUpdates()
-            self.delegate?.tableView(self, headerView: sectionOpened, didExpandSection: section)
-            sectionOpened.uiSetupForExpandedState()
-        })
+            self.delegate?.tableView(self, headerView: sectionClosed, didCloseSection: section)
+            sectionClosed.uiSetupForClosedState()
+            self.lastOpenSectionIndex = NSNotFound
+        }
+    }
+    
+    
+    private func openHeader(headerView:JExpandableTableViewHV,section : Int){
         
+        if(headerView.sectionInfo.isOpen == true){
+            
+            let sectionOpened = headerView
+
+            self.tableview.beginUpdates()
+            let alastOpenSectionIndex = self.lastOpenSectionIndex
+            let currentSection = section
+            self.lastOpenSectionIndex = currentSection
+            
+            self.dataSource?.tableView(self, numberOfRowsInSection: section, callback: { (noOfRows : Int) in
+                
+                let info : SectionInfo = self.sectionInfoArray[section]
+                info.noOfRows = noOfRows
+                
+                var array = [IndexPath]()
+                for index in  0..<noOfRows{
+                    
+                    let indexPath = IndexPath(row: index, section: currentSection)
+                    array.append(indexPath)
+                    
+                }
+                
+                if alastOpenSectionIndex != NSNotFound && self.keepPreviousCellExpanded == false{
+                    
+                    let info : SectionInfo = self.sectionInfoArray[alastOpenSectionIndex]
+                    info.isOpen = false
+                    let rows = self.tableview.numberOfRows(inSection: alastOpenSectionIndex)
+                    var rowsToDelete = [IndexPath]()
+                    for index in  0..<rows{
+                        
+                        let indexPath = IndexPath(row: index, section: alastOpenSectionIndex)
+                        rowsToDelete.append(indexPath)
+                        
+                    }
+                    
+                    if rowsToDelete.count != 0 {
+                        self.tableview.deleteRows(at: rowsToDelete, with: .automatic)
+                    }
+                }
+                if array.count != 0{
+                    self.tableview.insertRows(at: array, with: .automatic)
+                }
+                self.tableview.endUpdates()
+                self.delegate?.tableView(self, headerView: sectionOpened, didExpandSection: section)
+                sectionOpened.uiSetupForExpandedState()
+            })
+        }
+    }
+    
+    //JExpandableTableViewHV
+    func headerView(sectionOpened: JExpandableTableViewHV,section : Int){
+        
+        openHeader(headerView: sectionOpened, section: section)
     }
     
     func headerView(sectionClosed: JExpandableTableViewHV,section : Int){
         
-        let noOfRows  = self.tableview.numberOfRows(inSection: section)
-        var array = [IndexPath]()
-        for index in  0..<noOfRows{
-            
-            let indexPath = IndexPath(row: index, section: section)
-            array.append(indexPath)
-            
-        }
-        self.tableview.beginUpdates()
-        if array.count != 0 {
-            self.tableview.deleteRows(at: array, with: .automatic)
-        }
-        self.tableview.endUpdates()
-        self.delegate?.tableView(self, headerView: sectionClosed, didCloseSection: section)
-        sectionClosed.uiSetupForClosedState()
-        self.lastOpenSectionIndex = NSNotFound
+        closeHeader(headerView: sectionClosed, section: section)
+
     }
     
 }

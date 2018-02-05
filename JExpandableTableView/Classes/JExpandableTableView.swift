@@ -42,7 +42,7 @@ open class JExpandableTableViewHV: UITableViewHeaderFooterView {
         commonInit()
     }
     
-    func headerTapped(_ sender: UITapGestureRecognizer) {
+    @objc func headerTapped(_ sender: UITapGestureRecognizer) {
         
         self.sectionInfo.isOpen = !self.sectionInfo.isOpen
         if self.sectionInfo.isOpen == true {
